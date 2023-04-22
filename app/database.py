@@ -36,7 +36,7 @@ def fetch_todo() -> dict:
 
 def update_task_entry(task_id: int , text: str):
     cursor = postgres.cursor()
-    query = "Update tasks set task = '{}' where id = {};".format(text,task_id)
+    query = "Update tasks set task = '{task1}' where id = {1};".format(text,task_id)
     cursor.execute(query)
     postgres.commit()
     cursor.close()
